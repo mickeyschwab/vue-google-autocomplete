@@ -2,6 +2,10 @@
 
 A Vue.js autosuggest component for the Google Maps Places API.
 
+## Demo
+
+Live demo: [olefirenko.github.io/vue-google-autocomplete](https://olefirenko.github.io/vue-google-autocomplete/)
+
 ## Benefits
 
 I have tried to use different Vue Google Autocomplete components, but did not find any that would solve my needs. So below I would like to mention what you can get from this exact component:
@@ -53,9 +57,9 @@ import VueGoogleAutocomplete from 'vue-google-autocomplete'
 
 In your template you can use this syntax:
 ```
-<vue-google-autocomplete 
-    id="map" 
-    className="form-control"
+<vue-google-autocomplete
+    id="map"
+    classname="form-control"
     placeholder="Start typing"
     v-on:placechanged="getFromData"
 >
@@ -69,7 +73,7 @@ Type: `String`
 
 `required` ID for the input container.
 
-#### className
+#### classname
 Type: `String`
 
 Class to the input container.
@@ -80,20 +84,33 @@ Default: `Start typing`
 
 The input field will get this placeholder text.
 
+#### types
+Type: `String`
+Default: `address`
+
+Types supported in place autocomplete requests. [More info] (https://developers.google.com/places/supported_types#table3)
+
+
+#### enable-geolocation
+Type: `Boolean`
+Default: `false`
+
+Bias the search towards user current location.
+
 
 
 ### Example
 
-Please note that you need to provide what method will listen (`v-on:placechanged`) to an event when the address data is obtained. 
+Please note that you need to provide what method will listen (`v-on:placechanged`) to an event when the address data is obtained.
 
 ```js
 <template>
     <div>
         <h2>Your Address</h2>
 
-        <vue-google-autocomplete 
-            id="map" 
-            className="form-control"
+        <vue-google-autocomplete
+            id="map"
+            classname="form-control"
             placeholder="Please type your address"
             v-on:placechanged="getAddressData"
         >
@@ -109,7 +126,7 @@ Please note that you need to provide what method will listen (`v-on:placechanged
 
         data: function () {
             return {
-              address: '' 
+              address: ''
             }
         },
 
