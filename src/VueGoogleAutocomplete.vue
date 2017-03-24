@@ -81,6 +81,7 @@
 
                     returnData['latitude'] = place.geometry.location.lat();
                     returnData['longitude'] = place.geometry.location.lng();
+                    returnData['place_id'] = place.place_id;
 
                     // return returnData object and PlaceResult object
                     this.$emit('placechanged', returnData, this.autocomplete.getPlace());
